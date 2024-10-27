@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+    <header>
+        <h1>BOOKSTORE</h1>
+    </header>
+
+    <nav>
+        <li><a href="">HOME</a></li>
+        <li><a href="">MEMBERSHIP</a></li>
+        <li><a href="">BOOKS</a>
+        <ul>
+            <li><a href="">Fantasy</a></li>
+            <li><a href="">Mistery</a></li>
+            <li><a href="">Romance</a></li>
+            <li><a href="">Drama</a></li>
+            <li><a href="">Historical Fiction</a></li>
+            <li><a href="">Thriller</a></li>
+            <li><a href="">Biography</a></li>
+            <li><a href="">Poetry</a></li>
+            <li><a href="">Self-help book</a></li>
+        </ul>
+        </li>
+        <li><a href="">WE RECOMMEND</a></li>
+        <li><a href="">BOOK CLUB</a></li>
+    </nav>
+
+    <section>
+        <h2>New Books</h2>
+        <h2>Everyone's Talking About</h2>
+        <h2>Coming Soon</h2>
+        <h2>Our Best Kids' Books</h2>
+    </section>
+
+
+
+
+    <footer>
+        <a href="">Help Center</a>
+        <a href="">Store Pickup</a>
+        <a href="">Order Status</a>
+    
+    </footer>
+</body>
+</html>
