@@ -14,11 +14,11 @@
             <li><a href="werecommend.html">WE RECOMMEND</a></li>
             <li><a href="bookclub.html">BOOK CLUB</a></li>
         </ul>
-        </nav> 
+        </nav><div class="bg-dark p-2 text-light bg-opacity-50">
     <div class="form">
     <h2>Membership Registration</h2>
     <hr>
-    <form action="home.html">
+    <form action="home.html" method="get">
         <fieldset>
             <legend>First Name</legend>
             <input type="text" id="name" name="name">
@@ -27,18 +27,24 @@
             <legend>Last Name</legend>
             <input type="text" id="surname" name="surname">
         </fieldset>
-            <fieldset>
-                <legend>Street Address</legend>
-                <input type="text" id="Address" name="Address">
-            </fieldset>
-            <fieldset>
+        <fieldset>
+            <legend>State</legend>
+      <select id="country" name="country" required>
+      <option value="">Select your country</option>
+      <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+      <option value="Croatia">Croatia</option>
+      <option value="Serbia">Serbia</option>
+      <option value="Montenegro">Montenegro</option>
+    </select>
+        </fieldset>
+        <fieldset>
                 <legend>City</legend>
                 <input type="text" id="city" name="city">
             </fieldset>
             <fieldset>
-                <legend>State</legend>
-                <input type="text" id="state" name="state">
-            </fieldset>
+                <legend>Street Address</legend>
+                <input type="text" id="Address" name="Address">
+            </fieldset>       
             <fieldset>
             <legend>Phone number</legend>
             <input type="number" id="number" name="number">
@@ -70,6 +76,6 @@
         <span>Sign in</span>
     </button><br>
 
-</form></div>
+</form></div></div> 
 </body>
 </html>
