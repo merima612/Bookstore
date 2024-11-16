@@ -18,7 +18,7 @@ nav{
     text-decoration: none;/*uklanjanje linije ispod(od linka)*/
     list-style-type: none;/*uklanjanje oznake nabrajanja*/
     background-color: rgba(118, 97, 11, 0.607);
-    padding: 0.5%;/*podesava padding cijelog nava*/
+    padding: 0.4%;/*podesava padding cijelog nava*/
     margin-top: -3%;
     
     
@@ -29,19 +29,13 @@ nav ul{
     justify-content: space-around;/*ravnomjerno rasporeduje elemente u navu*/
     display: flex; /* Postavlja listu horizontalno */
 }
-nav ul li{
-    position: relative;/*pozicioniranje podmenija*/
-    list-style-type: none;/*uklanjanje oznake nabrajanja*/
-    margin: 0px 20px;
-    
-}
 nav a{
     text-decoration: none;/*uklanjanje linije ispod(od linka)*/
     color: rgb(252, 251, 249);
 
 }
 nav ol li a:hover{
-    background-color: rgba(69, 56, 4, 0.607);
+    background-color: rgba(44, 35, 1, 0.607);
 
 }
 
