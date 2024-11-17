@@ -14,7 +14,6 @@ body{
    
 }
 nav{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;/*postavljanje fonta*/
     text-decoration: none;/*uklanjanje linije ispod(od linka)*/
     list-style-type: none;/*uklanjanje oznake nabrajanja*/
     background-color: rgba(118, 97, 11, 0.607);
@@ -43,11 +42,6 @@ img{
     height: 14%;
     width: 14%;   
 }
-h2{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    
-
-}
 .container{
     display: flex;
     align-items: flex-start;
@@ -61,7 +55,8 @@ h2{
     width: 300px;
 }
 .form{
-    background-color: rgb(148, 131, 63);
+    background-color:#d3d3b7;
+    color: rgb(0, 0, 0);
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 2%;
@@ -72,28 +67,5 @@ h2{
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 .body{
-    background-color: rgb(73, 62, 17);
-}
-@media (max-width: 480px) {
-    body {
-        font-size: 12px; /* Još manja veličina fonta na mobilnim uređajima */
-    }
-
-    nav {
-        flex-direction: column; /* I dalje vertikalni raspored */
-    }
-
-    .form {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .container {
-        flex-direction: column; /* Kolona za mobilne uređaje */
-    }
-
-    img {
-        width: 100%; /* Slike se šire na 100% širine ekrana */
-        height: auto;
-    }
+    background-color: rgb(0, 0, 0);
 }
