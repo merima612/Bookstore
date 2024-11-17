@@ -74,3 +74,26 @@ h2{
 .body{
     background-color: rgb(73, 62, 17);
 }
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Još manja veličina fonta na mobilnim uređajima */
+    }
+
+    nav {
+        flex-direction: column; /* I dalje vertikalni raspored */
+    }
+
+    .form {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .container {
+        flex-direction: column; /* Kolona za mobilne uređaje */
+    }
+
+    img {
+        width: 100%; /* Slike se šire na 100% širine ekrana */
+        height: auto;
+    }
+}
