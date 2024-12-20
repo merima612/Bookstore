@@ -63,7 +63,10 @@ a{
     <li><a href="cart.html">SHOPPING CART</a></li>
     
 </ul>
-</nav><div class="bg-dark p-2 text-light bg-opacity-50 gap-4">
+</nav> <div class="theme-switcher">
+  <button onclick="switchTheme('dark')">Dark Theme</button>
+  <button onclick="switchTheme('light')">Light Theme</button>
+</div> 
     <div class="row row-cols-1 row-cols-md-6 g-7">
         <div class="col">
           <div class="card">
@@ -266,5 +269,16 @@ a{
           <a href="storepickup.html">Store Pickup</a><br>
           <a href="aboutus.html">About Us</a>
       
-      </footer> </div>
+      </footer><script>
+        function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme'); 
+            } else if (theme === 'light') {
+                document.body.classList.add('light-theme'); 
+                document.body.classList.remove('dark-theme'); 
+            }
+        }
+        
+        </script></div>
     </body>

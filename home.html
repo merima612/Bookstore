@@ -10,10 +10,10 @@
         <link href="new.css" type="text/css" rel="stylesheet">
     </head>
 <body>
-  
-    <header>
+     <header>
         <h1>BOOKSTORE</h1>
-   </header>
+   </header> 
+
     <nav>
         <ul>
         <li><a href="home.html">HOME</a></li>
@@ -21,10 +21,12 @@
         <li><a href="werecommend.html">WE RECOMMEND</a></li>
         <li><a href="bookclub.html">BOOK CLUB</a></li>
         <li><a href="forma.html">MEMBERSHIP</a></li>
-        <li><a href="cart.html">SHOPPING CART</a></li>
-        
+        <li><a href="cart.html">SHOPPING CART</a></li>  </nav> 
+        <div class="theme-switcher">
+          <button onclick="switchTheme('dark')">Dark Theme</button>
+          <button onclick="switchTheme('light')">Light Theme</button>
+      </div>      
 </ul>
-    </nav>  <div class="bg-dark p-2 text-light bg-opacity-75">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="width: 40%; margin-left: auto; margin-right: auto;">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -122,8 +124,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-</script>
+</script><script>
+function switchTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+        document.body.classList.remove('light-theme'); 
+    } else if (theme === 'light') {
+        document.body.classList.add('light-theme'); 
+        document.body.classList.remove('dark-theme'); 
+    }
+}
 
+</script>
     <footer style="text-align: center;">
       <h6>Foundations of Web Development</h6>
       <h6>Merima Durak</h6>
