@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="sass.css">
+    <link href="style.css" type="text/css" rel="stylesheet">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
     <style>
-        nav{
+        nav {
             margin-top: 3%;
         }
+        #success-message {
+            color: green;
+            display: none;
+        }
     </style>
-    </head>
+</head>
 <body class="body">
     <nav>
         <ul>
@@ -21,84 +26,154 @@
             <li><a href="forma.html">MEMBERSHIP</a></li>
             <li><a href="cart.html">SHOPPING CART</a></li>
         </ul>
-        </nav>
-        <div class="theme-switcher">
-            <button onclick="switchTheme('dark')">Dark Theme</button>
-            <button onclick="switchTheme('light')">Light Theme</button>
-        </div>     
-      
+    </nav>
+    <div class="theme-switcher">
+        <button onclick="switchTheme('dark')">Dark Theme</button>
+        <button onclick="switchTheme('light')">Light Theme</button>
+    </div>     
     <div class="form">
-    <h2>Membership Registration</h2>
-    <hr>
-    <form action="home.html" method="get">
-        <fieldset>
-            <legend>First Name</legend>
-            <input type="text" id="name" name="name">
-        </fieldset>
-        <fieldset>
-            <legend>Last Name</legend>
-            <input type="text" id="surname" name="surname">
-        </fieldset>
-        <fieldset>
-            <legend>State</legend>
-      <select id="country" name="country" required>
-      <option value="">Select your country</option>
-      <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-      <option value="Croatia">Croatia</option>
-      <option value="Serbia">Serbia</option>
-      <option value="Montenegro">Montenegro</option>
-    </select>
-        </fieldset>
-        <fieldset>
+        <h2 style="text-align: center;">Membership Registration</h2>
+        <hr>
+        <form id="registrationForm">
+            <fieldset>
+                <legend>First Name</legend>
+                <input type="text" id="name" name="name" required>
+            </fieldset>
+            <fieldset>
+                <legend>Last Name</legend>
+                <input type="text" id="surname" name="surname" required>
+            </fieldset>
+            <fieldset>
+                <legend>State</legend>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Serbia">Serbia</option>
+                    <option value="Montenegro">Montenegro</option>
+                </select>
+            </fieldset>
+            <fieldset>
                 <legend>City</legend>
-                <input type="text" id="city" name="city">
+                <input type="text" id="city" name="city" required>
             </fieldset>
             <fieldset>
                 <legend>Street Address</legend>
-                <input type="text" id="Address" name="Address">
-            </fieldset>       
+                <input type="text" id="Address" name="Address" required>
+            </fieldset>
             <fieldset>
-            <legend>Phone number</legend>
-            <input type="number" id="number" name="number">
-        </fieldset>
-        <fieldset>
-            <legend>Zip code</legend>
-            <input type="number" id="code" name="code">
-        </fieldset>
-        <fieldset>
-            <legend>Gender</legend>
-            <input type="radio" id="gender" name="gender">Male
-            <input type="radio" id="gender" name="gender">Female
-        </fieldset>
-    <fieldset>
-        <legend>Email Address</legend>
-        <input type="email" id="email" name="email">
-    </fieldset>
-    <fieldset>
-        <legend>Username</legend>
-        <input type="text" id="username" name="username">
-    </fieldset>
+                <legend>Phone number</legend>
+                <input type="tel" id="number" name="number" pattern="[0-9]{10}" required>
+            </fieldset>
+            <fieldset>
+                <legend>Zip code</legend>
+                <input type="number" id="code" name="code" required>
+            </fieldset>
+            <fieldset>
+                <legend>Gender</legend>
+                <input type="radio" id="male" name="gender" value="Male" required> Male
+                <input type="radio" id="female" name="gender" value="Female" required> Female
+            </fieldset>
+            <fieldset>
+                <legend>Email Address</legend>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+            <fieldset>
+                <legend>Username</legend>
+                <input type="text" id="username" name="username" required>
+            </fieldset>
+            <fieldset>
+                <legend>Password</legend>
+                <input type="password" id="password" name="password" required>
+                <div id="passwordStrength"></div>
+            </fieldset>
+            <fieldset>
+                <legend>Date of Birth</legend>
+                <input type="date" id="dob" name="dob" required>
+            </fieldset>
+            <hr>
+            <button type="submit">Sign in</button>
+        </form>
+        <p id="success-message">Your data has been saved successfully!</p>
+    </div>
 
-    <fieldset>
-        <legend>Password</legend>
-        <input type="password" id="password" name="password"> 
-    </fieldset>
-<hr>
-    <button type="submit">
-        <span>Sign in</span>
-    </button><br>
+    <script>
+       document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Sprečava standardno slanje forme
 
-</form></div></div>                   <script>
-    function switchTheme(theme) {
-        if (theme === 'dark') {
-            document.body.classList.add('dark-theme');
-            document.body.classList.remove('light-theme'); 
-        } else if (theme === 'light') {
-            document.body.classList.add('light-theme'); 
-            document.body.classList.remove('dark-theme'); 
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/save-data', true); // Postavi odgovarajući backend endpoint
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200 || xhr.status === 0) {
+    document.getElementById('success-message').style.display = 'block';
+    setTimeout(() => {
+        window.location.href = 'home.html';
+    }, 2000);
+}
+
+            else {
+                alert('Failed to save data. Please try again.');
+            }
         }
-    }
-    
+    };
+
+    xhr.send(JSON.stringify(data)); // Slanje podataka u JSON formatu
+});
+
+        
+
+        function validatePasswordStrength(password) {
+            const strengthCriteria = [
+                /[A-Z]/, 
+                /[a-z]/,
+                /[0-9]/, 
+                /[!@#$%^&*(),.?":{}|<>]/ 
+            ];
+            let strength = 0;
+
+            strengthCriteria.forEach((regex) => {
+                if (regex.test(password)) {
+                    strength++;
+                }
+            });
+
+            switch (strength) {
+                case 4:
+                    return 'Strong';
+                case 3:
+                    return 'Moderate';
+                case 2:
+                    return 'Weak';
+                default:
+                    return 'Very Weak';
+            }
+        }
+
+        const passwordInput = document.getElementById('password');
+        const passwordStrength = document.getElementById('passwordStrength');
+
+        passwordInput.addEventListener('input', (e) => {
+            const strength = validatePasswordStrength(e.target.value);
+            passwordStrength.textContent = `Password Strength: ${strength}`;
+            passwordStrength.style.color =
+                strength === 'Strong' ? 'green' : strength === 'Moderate' ? 'orange' : 'red';
+        });
+
+        function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme'); 
+            } else if (theme === 'light') {
+                document.body.classList.add('light-theme'); 
+                document.body.classList.remove('dark-theme'); 
+            }
+        }
     </script>
 </body>
 </html>

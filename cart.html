@@ -12,44 +12,142 @@
             margin-bottom: 10px;
             padding: 10px;
         }
+        .toastr {
+            position: fixed;
+            margin-left: 43%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
+            z-index: 1000;
+        }
+
+        .toastr-success {
+            background-color: green;
+        }
+
+        .toastr-error {
+            background-color: red;
+        }
+
     </style>
 </head>
 <body>
-<div class="container mt-5">
-    <h2>Your Cart</h2>
-    
-    <div id="cart-items">
-        <div class="cart-item">
-            <div class="row">
-                <div class="col-md-8">
-                    <h4>Your cart is empty</h4>
-                </div>
-                <div class="col-md-2">
-                    
-                </div>
- 
-               
-                <div class="col-md-2">
-                    <button><a href="books.html">Continue shopping</a></button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container mt-5">
+        <h2>Your Cart</h2>
 
-  
-    <div class="mt-4 text-right">
-        <h4>Total</h4>
-        <button class="btn btn-success">Pay</button>
+        <div id="cart-items"></div>
+
+        <div class="mt-4 text-right">
+            <h4>Total</h4>
+            <button><a href="books.html">Continue shopping</a></button>
+            <button class="btn btn-success">Pay</button>
+        </div>
     </div>
     <footer style="text-align: center;">
         <h6>Foundations of Web Development</h6>
         <h6>Merima Durak</h6>
         <a href="mailto:amela.vatres@stu.ibu.edu.ba">Send an email</a><br>
-          <a href="storepickup.html">Store Pickup</a><br>
-          <a href="aboutus.html">About Us</a>
-      
-      </footer>
-</div>
+        <a href="storepickup.html">Store Pickup</a><br>
+        <a href="aboutus.html">About Us</a>
+    </footer>
+    <script>
+        window.onload = function () {
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const cartItemsContainer = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<h4>Your cart is empty</h4>';
+            } else {
+                renderCartItems(cart);
+            }
+
+            function renderCartItems(cart) {
+                let cartHTML = '';
+                cart.forEach((item, index) => {
+                    cartHTML += `
+                        <div class="cart-item" data-index="${index}">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="${item.image}" alt="${item.title}" style="width: 80px; height: 100px;">
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>${item.title}</h5>
+                                    <p>Price: ${item.price}</p>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                    <button class="btn btn-danger btn-sm remove-item">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                cartItemsContainer.innerHTML = cartHTML;
+
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const itemIndex = this.closest('.cart-item').dataset.index;
+                        removeItemFromCart(itemIndex);
+                    });
+                });
+            }
+
+            function removeItemFromCart(index) {
+
+                cart.splice(index, 1);
+
+  
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<h4>Your cart is empty</h4>';
+                } else {
+                    renderCartItems(cart);
+                }
+
+                showToastr('Item removed from cart', 'success');
+            }
+
+            function showToastr(message, type) {
+                const toastr = document.createElement('div');
+                toastr.className = `toastr toastr-${type}`;
+                toastr.innerText = message;
+                document.body.appendChild(toastr);
+
+                setTimeout(() => {
+                    toastr.remove();
+                }, 3000);
+            }
+        };
+    </script>
+
+    <script>
+        function addToCart(image, price, title) {
+
+            const product = { image, price, title };
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            showToastr('Item added to cart', 'success');
+        }
+
+        function showToastr(message, type) {
+            const toastr = document.createElement('div');
+            toastr.className = `toastr toastr-${type}`;
+            toastr.innerText = message;
+            document.body.appendChild(toastr);
+
+            setTimeout(() => {
+                toastr.remove();
+            }, 3000);
+        }
+    </script>
 
 </body>
+
+
 </html>
