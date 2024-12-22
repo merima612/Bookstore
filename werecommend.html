@@ -80,28 +80,28 @@
           
           </footer>
           <script>
-            function switchTheme(theme) {
-                if (theme === 'dark') {
-                    document.body.classList.add('dark-theme');
-                    document.body.classList.remove('light-theme'); 
-                } else if (theme === 'light') {
-                    document.body.classList.add('light-theme'); 
-                    document.body.classList.remove('dark-theme'); 
-                }
+            function switchTheme(theme){
+            if (theme==='dark'){
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+            } else if (theme==='light'){
+                document.body.classList.add('light-theme');
+                document.body.classList.remove('dark-theme');
             }
+        }
             
-        function loadBooks() {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'books.json', true); 
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
+        function loadBooks(){
+            const xhr=new XMLHttpRequest();
+            xhr.open('GET','books.json', true); 
+            xhr.onreadystatechange=function () {
+                if (xhr.readyState=== 4 && xhr.status === 200) {
                     const books = JSON.parse(xhr.responseText); 
-                    const container = document.getElementById('books-container');
+                    const container=document.getElementById('books-container');
 
-                    books.forEach(function (book) {
-                        const bookCard = document.createElement('div');
-                        bookCard.className = 'card mb-3';
-                        bookCard.innerHTML = `
+                    books.forEach(function (book){
+                        const bookCard=document.createElement('div');
+                        bookCard.className='card mb-3';
+                        bookCard.innerHTML= `
                             <div class="card-body">
                                 <h5 class="card-title">${book.title}</h5>
                                 <p class="card-text">Author: ${book.author}</p>
@@ -110,12 +110,11 @@
                         `;
                         container.appendChild(bookCard);
                     });
-                } else if (xhr.readyState === 4) {
+                } else if (xhr.readyState===4) {
                     console.error('Error loading books');
                 }
             };
             xhr.send(); 
-        }
-        loadBooks();
+        } loadBooks();
             </script>
 </body></html>

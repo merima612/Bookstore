@@ -99,11 +99,11 @@
   <span class="close">&times;</span>
   <img class="modal-content" id="modal-image">
 </div><script>
-document.addEventListener('DOMContentLoaded', () => {
-  const thumbnails = document.querySelectorAll('.thumbnail');
-  const modal = document.getElementById('modal');
-  const modalImage = document.getElementById('modal-image');
-  const closeBtn = document.querySelector('.close');
+document.addEventListener('DOMContentLoaded', () =>{
+  const thumbnails=document.querySelectorAll('.thumbnail');
+  const modal=document.getElementById('modal');
+  const modalImage=document.getElementById('modal-image');
+  const closeBtn =document.querySelector('.close');
 
   thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('click', () => {
@@ -112,24 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+  closeBtn.addEventListener('click', ()=> {
+    modal.style.display ='none';
   });
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
+  modal.addEventListener('click', (e)=>{
+    if (e.target=== modal){
+      modal.style.display='none';
     }
   });
 });
 
 
 </script><script>
-function switchTheme(theme) {
-    if (theme === 'dark') {
+function switchTheme(theme){
+    if (theme ==='dark'){
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme'); 
-    } else if (theme === 'light') {
+  } else if (theme ==='light'){
         document.body.classList.add('light-theme'); 
         document.body.classList.remove('dark-theme'); 
     }

@@ -21,22 +21,22 @@
 
         .container {
     display: flex;
-    flex-wrap: wrap; /* Omogućava prelamanje kada je potrebno */
-    justify-content: space-around; /* Ravnomerno raspoređivanje slika sa razmakom između njih */
+    flex-wrap: wrap; 
+    justify-content: space-around; 
 }
 
 .image-container {
     display: flex;
-    flex-direction: column; /* Postavlja sliku i dugme u kolonu (vertikalno) */
-    margin: 20px; /* Razmak između slika */
-    text-align: center; /* Centriranje sadržaja */
-    width: 190px; /* Širina za svaku sliku, možete promeniti prema potrebama */
+    flex-direction: column;
+    margin: 20px; 
+    text-align: center; 
+    width: 190px; 
     height: 300px;
 }
 
 .image-container img {
-    width: 90%; /* Slika će zauzeti 100% širine roditeljskog elementa */
-    height: 120%; /* Održava proporcije slike */
+    width: 90%; 
+    height: 120%; 
 }
 
 .see-description-btn {
@@ -47,7 +47,7 @@
     font-size: 14px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 7px; /* Razmak između slike i dugmeta */
+    margin-top: 7px; 
 }
 
 .see-description-btn:hover {
@@ -55,7 +55,7 @@
 }
 
 .content {
-    display: none; /* Skriva sadržaj na početku */
+    display: none; 
     margin-top: 10px;
     padding: 10px;
     color: white;
@@ -70,7 +70,7 @@ ul{
 }
 
 .content.show {
-    display: block; /* Pokaži sadržaj kad dugme bude kliknuto */
+    display: block; 
 }
 footer{
     margin-top: 8%;
@@ -171,28 +171,27 @@ footer{
 
     <script>
         function toggleDescription(contentId, button) {
-            const contentDiv = document.getElementById(contentId);
-            const currentText = button.innerText;
+            const contentDiv=document.getElementById(contentId);
+            const currentText=button.innerText;
 
             if (contentDiv.classList.contains('show')) {
                 contentDiv.classList.remove('show');
-                button.innerText = "View More";
+                button.innerText="View More";
             } else {
-                contentDiv.classList.add('show');
-                button.innerText = "View Less";
+                contentDiv.classList.add ('show');
+                button.innerText= "View Less";
             }
         }
     </script><script>
-function switchTheme(theme) {
-    if (theme === 'dark') {
-        document.body.classList.add('dark-theme');
-        document.body.classList.remove('light-theme'); 
-    } else if (theme === 'light') {
-        document.body.classList.add('light-theme'); 
-        document.body.classList.remove('dark-theme'); 
-    }
-}
-
+        function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+            } else if (theme ==='light') {
+                document.body.classList.add('light-theme');
+                document.body.classList.remove('dark-theme');
+            }
+        }
 </script>
 
     <footer style="text-align: center;">

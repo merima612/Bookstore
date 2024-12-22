@@ -114,7 +114,6 @@
                       </div>
                     </div>
                     <hr>
-
                     <h6>Foundations of Web Development</h6>
                     <h6>Merima Durak</h6>
                     <a href="mailto:amela.vatres@stu.ibu.edu.ba">Send an email</a><br>
@@ -123,31 +122,32 @@
                   
                   </footer> </div>
                   <script>
-                    const questions = document.querySelectorAll(".faq-question");
-                  questions.forEach(question => {
-                    question.addEventListener("click", () => {
-                      const answer = question.nextElementSibling;
-                      if (answer.style.display === "block") {
-                        answer.style.display = "none";
+                  
+                    const questions=document.querySelectorAll(".faq-question");
+                    questions.forEach(question =>{
+                    question.addEventListener("click", () =>{
+                    const answer = question.nextElementSibling;
+                    if (answer.style.display === "block") {
+                      answer.style.display = "none";
                       } else {
-                        document.querySelectorAll(".faq-answer").forEach(ans => {
-                          ans.style.display = "none";
+                        document.querySelectorAll(".faq-answer").forEach(ans =>{
+                          ans.style.display="none";
                         });
-                        answer.style.display = "block";
+                        answer.style.display="block";
                       }
                     });
                   });
                   </script>
                   <script>
-                    function switchTheme(theme) {
-                        if (theme === 'dark') {
-                            document.body.classList.add('dark-theme');
-                            document.body.classList.remove('light-theme'); 
-                        } else if (theme === 'light') {
-                            document.body.classList.add('light-theme'); 
-                            document.body.classList.remove('dark-theme'); 
-                        }
-                    }
+                   function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+            } else if (theme === 'light') {
+                document.body.classList.add('light-theme');
+                document.body.classList.remove('dark-theme');
+            }
+        }
                     
                     </script>
    </body></html>

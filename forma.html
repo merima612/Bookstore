@@ -98,17 +98,14 @@
     </div>
 
     <script>
-       document.getElementById('registrationForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Sprečava standardno slanje forme
-
+       document.getElementById('registrationForm').addEventListener('submit', function(e){
+    e.preventDefault(); 
     const formData = new FormData(this);
     const data = Object.fromEntries(formData.entries());
-
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/save-data', true); // Postavi odgovarajući backend endpoint
+    xhr.open('POST', '/save-data', true);
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function(){
         if (xhr.readyState === 4) {
             if (xhr.status === 200 || xhr.status === 0) {
     document.getElementById('success-message').style.display = 'block';
@@ -116,33 +113,27 @@
         window.location.href = 'home.html';
     }, 2000);
 }
-
-            else {
+        else {
                 alert('Failed to save data. Please try again.');
             }
         }
     };
 
-    xhr.send(JSON.stringify(data)); // Slanje podataka u JSON formatu
+    xhr.send(JSON.stringify(data)); 
 });
-
-        
-
-        function validatePasswordStrength(password) {
-            const strengthCriteria = [
+        function validatePasswordStrength(password){
+            const strengthCriteria =[
                 /[A-Z]/, 
                 /[a-z]/,
                 /[0-9]/, 
                 /[!@#$%^&*(),.?":{}|<>]/ 
             ];
             let strength = 0;
-
-            strengthCriteria.forEach((regex) => {
+            strengthCriteria.forEach((regex)=> {
                 if (regex.test(password)) {
                     strength++;
                 }
             });
-
             switch (strength) {
                 case 4:
                     return 'Strong';
@@ -155,7 +146,7 @@
             }
         }
 
-        const passwordInput = document.getElementById('password');
+        const passwordInput =document.getElementById('password');
         const passwordStrength = document.getElementById('passwordStrength');
 
         passwordInput.addEventListener('input', (e) => {
@@ -165,11 +156,11 @@
                 strength === 'Strong' ? 'green' : strength === 'Moderate' ? 'orange' : 'red';
         });
 
-        function switchTheme(theme) {
-            if (theme === 'dark') {
+        function switchTheme(theme){
+            if (theme==='dark'){
                 document.body.classList.add('dark-theme');
                 document.body.classList.remove('light-theme'); 
-            } else if (theme === 'light') {
+            } else if (theme==='light') {
                 document.body.classList.add('light-theme'); 
                 document.body.classList.remove('dark-theme'); 
             }

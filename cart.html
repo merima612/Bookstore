@@ -54,21 +54,19 @@
         <a href="aboutus.html">About Us</a>
     </footer>
     <script>
-        window.onload = function () {
+        window.onload=function(){
 
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            const cartItemsContainer = document.getElementById('cart-items');
-
-            if (cart.length === 0) {
+            let cart =JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer=document.getElementById('cart-items');
+            if (cart.length === 0){
                 cartItemsContainer.innerHTML = '<h4>Your cart is empty</h4>';
-            } else {
+        }   else{
                 renderCartItems(cart);
             }
 
-            function renderCartItems(cart) {
+            function renderCartItems(cart){
                 let cartHTML = '';
-                cart.forEach((item, index) => {
+                cart.forEach((item, index)=>{
                     cartHTML += `
                         <div class="cart-item" data-index="${index}">
                             <div class="row">
@@ -87,8 +85,7 @@
                     `;
                 });
                 cartItemsContainer.innerHTML = cartHTML;
-
-                document.querySelectorAll('.remove-item').forEach(button => {
+                document.querySelectorAll('.remove-item').forEach(button =>{
                     button.addEventListener('click', function () {
                         const itemIndex = this.closest('.cart-item').dataset.index;
                         removeItemFromCart(itemIndex);
@@ -99,26 +96,22 @@
             function removeItemFromCart(index) {
 
                 cart.splice(index, 1);
-
-  
                 localStorage.setItem('cart', JSON.stringify(cart));
-
                 if (cart.length === 0) {
                     cartItemsContainer.innerHTML = '<h4>Your cart is empty</h4>';
-                } else {
+              } else {
                     renderCartItems(cart);
                 }
-
                 showToastr('Item removed from cart', 'success');
             }
 
             function showToastr(message, type) {
                 const toastr = document.createElement('div');
-                toastr.className = `toastr toastr-${type}`;
-                toastr.innerText = message;
+                toastr.className=`toastr toastr-${type}`;
+                toastr.innerText =message;
                 document.body.appendChild(toastr);
 
-                setTimeout(() => {
+                setTimeout(() =>{
                     toastr.remove();
                 }, 3000);
             }
@@ -134,14 +127,12 @@
             localStorage.setItem('cart', JSON.stringify(cart));
             showToastr('Item added to cart', 'success');
         }
-
         function showToastr(message, type) {
             const toastr = document.createElement('div');
             toastr.className = `toastr toastr-${type}`;
             toastr.innerText = message;
             document.body.appendChild(toastr);
-
-            setTimeout(() => {
+            setTimeout(()=>{
                 toastr.remove();
             }, 3000);
         }
