@@ -1,41 +1,103 @@
-h1{
-    color:rgb(248, 233, 203);
-    background-image: url(library-book-bookshelf-read.jpg);
-    padding: 10%;
-    text-align: center;
-    font-size: 2cm;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: rgb(96, 71, 22);
-    margin-top: 0%;
-}
-body{
-    background-image:url(library-book-bookshelf-read.jpg);
-    bg-success p-2 text-dark bg-opacity-50"
-   
-}
-nav{
-    text-decoration: none;/*uklanjanje linije ispod(od linka)*/
-    list-style-type: none;/*uklanjanje oznake nabrajanja*/
-    background-color: rgba(118, 97, 11, 0.607);
-    padding: 0.4%;/*podesava padding cijelog nava*/
-    margin-top: -3%;
-    
-    
-}
-nav ul{
-    text-align: center;
-    list-style-type: none;/*uklanjanje oznake nabrajanja*/
-    justify-content: space-around;/*ravnomjerno rasporeduje elemente u navu*/
-    display: flex; /* Postavlja listu horizontalno */
-}
-nav a{
-    text-decoration: none;/*uklanjanje linije ispod(od linka)*/
-    color: rgb(252, 251, 249);
 
+h1 {
+    padding: 3%;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Cinzel', 'Georgia', serif;
+    text-shadow: 2px 2px 4px rgba(96, 71, 22, 0.7);
+    background-color: #e1d7ba; 
+    color: #000;
 }
-nav ol li a:hover{
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e1d7ba; 
+}
+
+nav {
+    padding: 1%;
+    background-color: #cbbfb4;
+    color: #000;
+    margin-bottom: 2%;
+}
+
+.dark-theme {
+    background-color:  #5C4A3F;
+    color: #fff; 
+}
+.dark-theme nav {
+    background-color: #4A3B35; 
+    color: #9c2e2e;
+}
+
+.dark-theme h1 {
+    background-color: #5C4A3F; 
+    color: #fff;
+}
+.dark-theme nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(8, 5, 0);
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
     background-color: rgba(44, 35, 1, 0.607);
+    transform: scale(1.1);
+    border-radius: 5px;
+}
 
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 3px solid #F5F5DC;
+}
+
+/* Stilizacija za dugme hamburger menija (ako koristiš za mobilnu verziju) */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav a {
+        padding: 15px;
+    }
+}
+.theme-switcher {
+    text-align: center;
+    margin: 20px 0;
+}
+.theme-switcher button {
+    background-color: #cbbfb4; 
+    color: #000; 
+    border: 2px solid #b8a69c; 
+    border-radius: 9px; 
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animacija za hover efekat */
+}
+
+.theme-switcher button:hover {
+    background-color: #b8a69c; /* Tamnija boja na hover */
+    color: #fff; /* Bela boja teksta na hover */
+    transform: scale(1.1); /* Povećanje veličine */
 }
 
 img{
@@ -54,18 +116,55 @@ img{
     margin-left: 40px;
     width: 300px;
 }
-.form{
-    background-color:#d3d3b7;
+#registrationForm{
+    background-color: #cbbfb4;
     color: rgb(0, 0, 0);
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 2%;
+    margin-bottom: 3%;
     padding-top: 7%;
-    padding-bottom: 7%;
+    padding-bottom: 4%;
     padding-right: 4%;
     padding-left: 4%;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
 .body{
-    background-color: rgb(0, 0, 0);
+    margin: 0;
+    color: #977777;
+    font-family: Arial, sans-serif;
+    background-color: #e1d7ba;; 
 }
+
+.faq {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  
+  .faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+  
+  .faq-answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 16px;
+    color:  #000;;
+  }
+  
+  .faq-question:hover {
+    color: #400101;
+  }
+
+  

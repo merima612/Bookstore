@@ -63,208 +63,105 @@ a{
     <li><a href="cart.html">SHOPPING CART</a></li>
     
 </ul>
-</nav><div class="bg-dark p-2 text-light bg-opacity-50 gap-4">
-    <div class="row row-cols-1 row-cols-md-6 g-7">
-        <div class="col">
-          <div class="card">
-            <img src="lf (12).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-            <div class="card-body">
+</nav> <div class="theme-switcher">
+  <button onclick="switchTheme('dark')">Dark Theme</button>
+  <button onclick="switchTheme('light')">Light Theme</button>
+</div> 
+<div class="row row-cols-1 row-cols-md-6 g-7">
+  <div class="col">
+      <div class="card" id="product-1">
+          <img src="lf (12).webp" class="card-img-top" alt="No internet connection. Please check your network.">
+          <div class="card-body">
               <h5 class="card-title">28,95$</h5>
-              </div>
-              <div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="lf (13).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-            <div class="card-body">
+          <div class="add-to-cart">
+              <a href="cart.html" onclick="addToCart('lf (12).webp', '28,95$', 'Product 1')">Add to cart</a>
+          </div>
+      </div>
+  </div>
+  <div class="col">
+      <div class="card" id="product-2">
+          <img src="lf (13).webp" class="card-img-top" alt="No internet connection. Please check your network.">
+          <div class="card-body">
               <h5 class="card-title">35,49$</h5>
-            </div>
-            <div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="lf (14).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-            <div class="card-body">
+          <div class="add-to-cart">
+              <a href="cart.html" onclick="addToCart('lf (13).webp', '35,49$', 'Product 2')">Add to cart</a>
+          </div>
+      </div>
+  </div>
+  <div class="col">
+      <div class="card" id="product-3">
+          <img src="lf (14).webp" class="card-img-top" alt="No internet connection. Please check your network.">
+          <div class="card-body">
               <h5 class="card-title">25,00$</h5>
-         </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="lf (15).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-            <div class="card-body">
+          <div class="add-to-cart">
+              <a href="cart.html" onclick="addToCart('lf (14).webp', '25,00$', 'Product 3')">Add to cart</a>
+          </div>
+      </div>
+  </div>
+  <div class="col">
+      <div class="card" id="product-4">
+          <img src="lf (15).webp" class="card-img-top" alt="No internet connection. Please check your network.">
+          <div class="card-body">
               <h5 class="card-title">32,99$</h5>
-            </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
           </div>
-        </div>
-        <div class="col">
-            <div class="card">
-              <img src="lf (16).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">24,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
+          <div class="add-to-cart">
+              <a href="cart.html" onclick="addToCart('lf (15).webp', '32,99$', 'Product 4')">Add to cart</a>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (17).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">19,95$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
+      </div>
+  </div>
+  <div class="col">
+      <div class="card" id="product-5">
+          <img src="lf (16).webp" class="card-img-top" alt="No internet connection. Please check your network.">
+          <div class="card-body">
+              <h5 class="card-title">24,99$</h5>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (18).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">22,14$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
+          <div class="add-to-cart">
+              <a href="cart.html" onclick="addToCart('lf (16).webp', '24,99$', 'Product 5')">Add to cart</a>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (19).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">19,95$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
+      </div>
+  </div>
+  <div class="col">
+      <div class="card" id="product-6">
+          <img src="lf (17).webp" class="card-img-top" alt="No internet connection. Please check your network.">
+          <div class="card-body">
+              <h5 class="card-title">19,95$</h5>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (20).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">29,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
+          <div class="add-to-cart">
+              <a href="cart.html" onclick="addToCart('lf (17).webp', '19,95$', 'Product 6')">Add to cart</a>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (21).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">19,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (22).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">18,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (23).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">14,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (24).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">19,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (25).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">18,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (26).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">19,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (27).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">18,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (28).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">29,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (29).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">18,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (30).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">35,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (31).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">28,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (32).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">19,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (33).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">18,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (34).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">29,99$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="lf (1).webp" class="card-img-top" alt="No internet connection. Please check your network.">
-              <div class="card-body">
-                <h5 class="card-title">28,55$</h5>
-              </div><div class="add-to-cart"><a href="cart.html">Add to cart</a></div>
-            </div>
-          </div>
-      </div>    <footer style="text-align: center;">
+      </div>
+  </div>
+</div>
+<footer style="text-align: center;">
         <h6>Foundations of Web Development</h6>
         <h6>Merima Durak</h6>
         <a href="mailto:amela.vatres@stu.ibu.edu.ba">Send an email</a><br>
           <a href="storepickup.html">Store Pickup</a><br>
           <a href="aboutus.html">About Us</a>
       
-      </footer> </div>
+      </footer>
+      <script>
+        function addToCart(image, price, title){
+            const product={image, price, title};
+            let cart=JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
+      <script>
+        function switchTheme(theme){
+            if (theme==='dark'){
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+            
+        }   else if(theme==='light'){
+                document.body.classList.add('light-theme'); 
+                document.body.classList.remove('dark-theme'); 
+            }
+        }
+        
+        </script></div>
     </body>

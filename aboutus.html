@@ -39,10 +39,14 @@
         <li><a href="werecommend.html">WE RECOMMEND</a></li>
         <li><a href="bookclub.html">BOOK CLUB</a></li>
         <li><a href="forma.html">MEMBERSHIP</a></li>
-        <li><a href="cart.html">ADD TO CART</a></li>
+        <li><a href="cart.html">ADD TO CART</a></li>  </nav> 
+        <div class="theme-switcher"> 
+          <button onclick="switchTheme('dark')">Dark Theme</button>
+          <button onclick="switchTheme('light')">Light Theme</button>
+      </div>  
         
 </ul>
-    </nav>  <div class="bg-dark p-2 text-light bg-opacity-75">
+ 
         <p>Classically speaking, our BOOKSTORE is...</p>
         <p>...a company that was founded in 2011 and deals with the distribution of books, textbooks and professional magazines, 
             as well as retailing of books in English in Terezija BB Street (Centar Skenderija - Privredni grad) in Sarajevo.
@@ -90,11 +94,60 @@
                         <td>Closed</td>
                       </tr>
                     </table>
+                    <h3 style="text-align: center; color: #400101;"><b>Frequently Asked Questions</b></h3>
+                    <div class="faq">
+                      <div class="faq-item">
+                        <h3 class="faq-question">How can I place an order?</h3>
+                        <div class="faq-answer">Add the desired book to your cart, proceed to the "Checkout" page, and follow the instructions to complete your purchase.</div>
+                      </div>
+                      <div class="faq-item">
+                        <h3 class="faq-question">What payment methods do you accept?</h3>
+                        <div class="faq-answer">We accept credit/debit cards, PayPal, and bank transfers.</div>
+                      </div>
+                      <div class="faq-item">
+                        <h3 class="faq-question">How long does shipping take?</h3>
+                        <div class="faq-answer">Shipping typically takes 3-5 business days. International shipping may take longer depending on your location.</div>
+                      </div>
+                      <div class="faq-item">
+                        <h3 class="faq-question">Can I return a book?</h3>
+                        <div class="faq-answer">Yes, you can return a book within 14 days of receiving it, provided it is in its original condition and you have the receipt.</div>
+                      </div>
+                    </div>
+                    <hr>
                     <h6>Foundations of Web Development</h6>
                     <h6>Merima Durak</h6>
                     <a href="mailto:amela.vatres@stu.ibu.edu.ba">Send an email</a><br>
                       <a href="storepickup.html">Store Pickup</a><br>
                       <a href="aboutus.html">About Us</a>
                   
-                  </footer>
-    </div></body></html>
+                  </footer> </div>
+                  <script>
+                  
+                    const questions=document.querySelectorAll(".faq-question");
+                    questions.forEach(question =>{
+                    question.addEventListener("click", () =>{
+                    const answer = question.nextElementSibling;
+                    if (answer.style.display === "block") {
+                      answer.style.display = "none";
+                      } else {
+                        document.querySelectorAll(".faq-answer").forEach(ans =>{
+                          ans.style.display="none";
+                        });
+                        answer.style.display="block";
+                      }
+                    });
+                  });
+                  </script>
+                  <script>
+                   function switchTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+            } else if (theme === 'light') {
+                document.body.classList.add('light-theme');
+                document.body.classList.remove('dark-theme');
+            }
+        }
+                    
+                    </script>
+   </body></html>

@@ -31,7 +31,10 @@
         <li><a href="cart.html">SHOPPING CART</a></li>
         
 </ul>
-    </nav><div class="bg-dark p-2 text-light bg-opacity-50">
+    </nav>        <div class="theme-switcher">
+        <button onclick="switchTheme('dark')">Dark Theme</button>
+        <button onclick="switchTheme('light')">Light Theme</button>
+    </div>   
         <h6>You can pick up your order in person at our bookstore. Please visit us during our <a href="aboutus.html">working hours</a> to collect your items!</h6>
         <h6>Thank you for shopping with us! If you have any questions or need assistance, feel free to contact us.</h6>
         <h3 style="text-align: center;">STORE LOCATION</h3>
@@ -46,5 +49,16 @@
       <a href="aboutus.html">About Us</a>
   
   </footer>
-
+  <script>
+    function switchTheme(theme){
+        if (theme==='dark') {
+            document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme'); 
+        }else if (theme==='light') {
+            document.body.classList.add('light-theme'); 
+            document.body.classList.remove('dark-theme'); 
+        }
+    }
+    
+    </script>
     </div>
