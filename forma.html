@@ -14,6 +14,7 @@
             color: green;
             display: none;
         }
+
     </style>
 </head>
 <body class="body">
@@ -34,6 +35,8 @@
     <div class="form">
         <h2 style="text-align: center;">Membership Registration</h2>
         <hr>
+        <div id="breadcrumbs"></div>
+        <div id="app">
         <form id="registrationForm">
             <fieldset>
                 <legend>First Name</legend>
@@ -92,8 +95,13 @@
                 <input type="date" id="dob" name="dob" required>
             </fieldset>
             <hr>
-            <button type="submit">Sign in</button>
+            <button type="submit">Register</button>
         </form>
+        <p>
+            <a href="/login" data-link>Already have an account? Login</a>
+        </p>
+    </div>
+    <script src="router.js"></script>
         <p id="success-message">Your data has been saved successfully!</p>
     </div>
 

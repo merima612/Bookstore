@@ -166,5 +166,10 @@ img{
   .faq-question:hover {
     color: #400101;
   }
+  #breadcrumbs {
+    margin: 10px 0;
+    font-size: 14px;
+    color: gray;
+}
 
   
