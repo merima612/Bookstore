@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <fieldset>
+                <legend>Email</legend>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+            <fieldset>
+                <legend>Password</legend>
+                <input type="password" id="password" name="password" required>
+            </fieldset>
+            <button type="submit">Login</button>
+        </form>
+        <p>
+            <a href="/register" data-link>Don't have an account? Register</a> |
+            <a href="/forgot-password" data-link>Forgot Password?</a>
+        </p>
+    </div>
+    <script src="router.js"></script>
+</body>
+</html>

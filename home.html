@@ -8,6 +8,12 @@
         <meta name="description" content="Browse a variety of books in our online bookstore. Find new releases, bestsellers, and more!">
         <link href="style.css" type="text/css" rel="stylesheet">
         <link href="new.css" type="text/css" rel="stylesheet">
+        <style>
+    nav ul li a.active {
+    color: rgb(10, 10, 10);
+    font-weight: bold;
+}
+        </style>
     </head>
 <body>
      <header>
@@ -16,7 +22,7 @@
 
     <nav>
         <ul>
-        <li><a href="home.html">HOME</a></li>
+        <li><a href="home.html" class="active">HOME</a></li>
         <li><a href="books.html">PRICE</a></li>
         <li><a href="werecommend.html">WE RECOMMEND</a></li>
         <li><a href="bookclub.html">BOOK CLUB</a></li>
@@ -98,7 +104,25 @@
 <div id="modal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="modal-image">
-</div><script>
+</div>
+<script>//za nav-active link
+  document.addEventListener("DOMContentLoaded", function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      function removeActiveClass() {
+          navLinks.forEach(link => {
+              link.classList.remove('active');
+          });
+      }
+      navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+              removeActiveClass();  
+              e.target.classList.add('active');
+          });
+      });
+  });
+</script>
+
+<script>
 document.addEventListener('DOMContentLoaded', () =>{
   const thumbnails=document.querySelectorAll('.thumbnail');
   const modal=document.getElementById('modal');

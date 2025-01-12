@@ -14,6 +14,10 @@
             color: green;
             display: none;
         }
+        nav ul li a.active {
+        color: rgb(10, 10, 10);
+        font-weight: bold;
+}
     </style>
 </head>
 <body class="body">
@@ -23,7 +27,7 @@
             <li><a href="books.html">PRICE</a></li>
             <li><a href="werecommend.html">WE RECOMMEND</a></li>
             <li><a href="bookclub.html">BOOK CLUB</a></li>
-            <li><a href="forma.html">MEMBERSHIP</a></li>
+            <li><a href="forma.html" class="active">MEMBERSHIP</a></li>
             <li><a href="cart.html">SHOPPING CART</a></li>
         </ul>
     </nav>
@@ -34,6 +38,8 @@
     <div class="form">
         <h2 style="text-align: center;">Membership Registration</h2>
         <hr>
+        <div id="breadcrumbs"></div>
+        <div id="app">
         <form id="registrationForm">
             <fieldset>
                 <legend>First Name</legend>
@@ -92,10 +98,32 @@
                 <input type="date" id="dob" name="dob" required>
             </fieldset>
             <hr>
-            <button type="submit">Sign in</button>
+            <button type="submit">Register</button>
         </form>
+        <p>
+            <a href="/login" data-link>Already have an account? Login</a>
+        </p>
+    </div>
+    <script src="router.js"></script>
         <p id="success-message">Your data has been saved successfully!</p>
     </div>
+    <script>//za nav-active link
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            function removeActiveClass() {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    removeActiveClass();  
+                    e.target.classList.add('active');
+                });
+            });
+        });
+      </script>
+      
 
     <script>
        document.getElementById('registrationForm').addEventListener('submit', function(e){

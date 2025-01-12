@@ -44,7 +44,10 @@ a{
   color: white;
   text-decoration: none;
 }
-            
+    nav ul li a.active {
+    color: rgb(10, 10, 10);
+    font-weight: bold;
+}     
        </style>
     </head>
 
@@ -56,7 +59,7 @@ a{
    <nav>
     <ul>
     <li><a href="home.html">HOME</a></li>
-    <li><a href="books.html">PRICE</a></li>
+    <li><a href="books.html" class="active">PRICE</a></li>
     <li><a href="werecommend.html">WE RECOMMEND</a></li>
     <li><a href="bookclub.html">BOOK CLUB</a></li>
     <li><a href="forma.html">MEMBERSHIP</a></li>
@@ -143,6 +146,24 @@ a{
           <a href="aboutus.html">About Us</a>
       
       </footer>
+      <script>//za nav-active link
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            function removeActiveClass() {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    removeActiveClass();  
+                    e.target.classList.add('active');
+                });
+            });
+        });
+      </script>
+      
+
       <script>
         function addToCart(image, price, title){
             const product={image, price, title};
